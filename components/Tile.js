@@ -9,7 +9,7 @@ const Tile = props => {
       {console.log("render " + props.title)}
       <View>
         <Text style={styles.tileHeader}>{props.title}</Text>
-        <Text style={styles.tileText}>{pressCount}</Text>
+        <Text style={styles.tileText}>count goes here</Text>
       </View>
     </TouchableOpacity>
   );
