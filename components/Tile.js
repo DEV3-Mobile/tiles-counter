@@ -1,15 +1,16 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+
 
 const Tile = props => {
-  function pressHandler() {
-    console.log("pressed " + props.title);
-  }
+  const [teller, setTeller] = useState(parseInt(props.startTeller));
+
   return (
-    <TouchableOpacity style={styles.tile} activeOpacity={0.7} onPress={() => pressHandler()}>
+    <TouchableOpacity style={styles.tile} activeOpacity={0.7} onPress={() => setTeller((currentTeller) => currentTeller + 1)}>
       {console.log("render " + props.title)}
       <View>
         <Text style={styles.tileHeader}>{props.title}</Text>
-        <Text style={styles.tileText}>count goes here</Text>
+        <Text style={styles.tileText}>{teller}</Text>
       </View>
     </TouchableOpacity>
   );
